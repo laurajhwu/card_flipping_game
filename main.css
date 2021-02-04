@@ -1,0 +1,119 @@
+body {
+    height: 100vh; 
+
+}
+
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    width:80%;
+    margin: 0 auto;
+}
+
+#game-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#game-title img {
+    max-width: 3em;
+
+}
+
+#game-title h2 {
+    padding-left: 0.5em;
+}
+
+header .score-title {
+    margin: 0;
+    color: #6c90ac;
+}
+
+header .tried-title {
+    margin: 5px 0px;
+}
+
+main {
+    display: flex;
+
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.card {
+    box-sizing: border-box;
+    border: 2px solid #e0e0e0;
+    flex: 7% 0 1; /* flex-basis, flex-grow, flex-shrink */
+    height: 8vw;
+    display: flex;
+    flex-flow: column nowrap; /* colum wrap --> becomes 'row' but with different axis direction */
+    justify-content: space-around;
+    margin: 2px;
+}
+
+.card img {
+    max-width: 30%;
+    align-self: center;
+}
+
+.card p {
+    margin: 0px 5px ;
+    font-size: 1.6vw;
+}
+
+.card p:last-child {
+    transform: rotate(180deg);
+}
+
+.back {
+    background-image: url('https://i.imgur.com/X5nacsZ.png');
+    background-size: cover;
+}
+
+.paired {
+    background-color: #dae0e3;
+}
+
+.wrong {
+    /* can also write 'animation: wrongAnimation 0.2s' */
+    animation-name: wrongAnimation;
+    animation-duration: 0.2s;
+    animation-iteration-count: 5; /* number of times the animation will occur */
+}
+
+/* CSS animation */
+@keyframes wrongAnimation {
+    /* what happens at 100% */
+    to {
+        border: 2px solid #ffd54f;
+    }
+}
+
+/** Game finished **/
+.completed {
+    position: absolute;
+    z-index: 999;
+    top: 33vh;
+    background-color: RGBA(232, 246, 254, 0.8);
+    width: 100vw;
+    padding: 50px 0;
+  }
+  .completed > p {
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+    margin: 0;
+  }
+  .completed > p:first-child {
+    font-size: 3em;
+    font-weight: 700;
+    color: #758d9a;
+  }
